@@ -5,10 +5,9 @@ const Landing = () => {
         <section className="landing">
             <div className="dark-overlay">
                 <div className="landing-inner">
-                    <h1 className="x-large">Developer Connector</h1>
+                    <h1 className="x-large">Social Network</h1>
                     <p className="lead">
-                        Create a developer profile/portfolio, share posts and get help from
-                        other developers
+                        Create a social network and share posts
                     </p>
                     <div className="buttons">
                         <a href="register.html" className="btn btn-primary">Sign Up</a>
@@ -20,4 +19,4 @@ const Landing = () => {
     )
 }
 
-export default Navbar
+export default Landing

@@ -1,3 +1,7 @@
+### To view this deployed github page please go to this link
+
+https://pyavchik.github.io/social-network/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
