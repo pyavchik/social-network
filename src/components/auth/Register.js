@@ -3,12 +3,13 @@ import React, {Fragment, useState} from "react";
 const Register = () => {
     const [formData, setFormData] = useState({
         name: '',
+        surname: '',
         email: '',
         password: '',
         password2: ''
     });
 
-    const {name, email, password, password2} = formData;
+    const {name, surname, email, password, password2} = formData;
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     return (
