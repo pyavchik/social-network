@@ -3,14 +3,20 @@ import axios from 'axios';
 
 const Register = () => {
     const [formData, setFormData] = useState({
-        name: '',
-        surname: '',
+        id: 11,
+        firstName: '',
+        lastName: '',
         email: '',
         password: '',
-        password2: ''
+        password2: '',
+        status: 'confirmed',
+        role: 'user',
+        disabled: 'false',
+        birthdayDate: '1998-04-12T14:17:51.391Z',
+        createdAt: '1998-04-12T14:17:51.391Z'
     });
 
-    const {name, surname, email, password, password2} = formData;
+    const {id, firstName, lastName, email, password, password2, status, role, disabled, birthdayDate, createdAt} = formData;
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
     const onSubmit = async e => {
         e.preventDefault();
@@ -18,10 +24,16 @@ const Register = () => {
             console.log('Passwords do not match')
         } else {
             const newUser = {
-                name,
-                surname,
+                id,
+                firstName,
+                lastName,
                 email,
-                password
+                password,
+                status,
+                role,
+                disabled,
+                birthdayDate,
+                createdAt
             }
             try {
                 const config = {
@@ -32,9 +44,10 @@ const Register = () => {
 
                 const body = JSON.stringify(newUser)
 
-                const res = await axios.post('/api/users, body')
+                const res = await axios.post('/api/v1/users', body, config)
+                console.log(res.data)
             } catch (error) {
-
+                console.log(error.response.data)
             }
         }
     };
@@ -48,8 +61,8 @@ const Register = () => {
                     <input
                         type="text"
                         placeholder="Name"
-                        name="name"
-                        value={name}
+                        name="firstName"
+                        value={firstName}
                         onChange={e => onChange(e)}
                         required
                     />
@@ -57,9 +70,9 @@ const Register = () => {
                 <div className="form-group">
                     <input
                         type="text"
-                        placeholder="Surname"
-                        name="surname"
-                        value={surname}
+                        placeholder="Lastname"
+                        name="lastName"
+                        value={lastName}
                         onChange={e => onChange(e)}
                         required
                     />
